@@ -40,3 +40,14 @@ h1 {
 .btn:hover {
   background-color: #005fa3;
 }
+
+.weather-box {
+  margin-top: 30px;
+  background-color: #ffffffdd;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-size: 1.1rem;
+  color: #003366;
+}
