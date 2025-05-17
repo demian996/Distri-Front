@@ -26,19 +26,19 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.EC2_HOST }} << 'EOF'
           # Actualizar imágenes
-          docker pull demian996/cicd-pipeline:latest
+          sudo docker pull demian996/cicd-pipeline:latest
           
           # Detener y limpiar
-          docker stop cicd-pipeline-container || true
-          docker rm cicd-pipeline-container || true
+          sudo docker stop cicd-pipeline-container || true
+          sudo docker rm cicd-pipeline-container || true
           
           # Ejecutar nuevo contenedor
-          docker run -d \
+          sudo docker run -d \
             --name cicd-pipeline-container \
             -p 80:80 \
             --restart unless-stopped \
             demian996/cicd-pipeline:latest
           
           # Limpieza
-          docker system prune -af
+          sudo docker system prune -af
         EOF
