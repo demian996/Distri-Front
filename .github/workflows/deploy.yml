@@ -25,5 +25,6 @@ jobs:
       if: ${{ github.event_name == 'push' }}
       run: docker build -t demian996/cicd-pipeline .
     - name: Push to Dockerhub
+      if: ${{ github.event_name == 'push' }}
       run: docker push demian996/cicd-pipeline:latest
 
